@@ -1,13 +1,9 @@
+server:
+  port: 9191
 spring:
   application:
     name: fraudDetection
   kafka:
     bootstrap-servers: localhost:9092
     producer:
-      key-serializer: org.apache.kafka.common.serializations.StringSerializer
-      value-serializer: org.apache.kafka.common.serializations.StringSerializer
-    streams:
-      application-id: fraud-detection-stream
-      properties:
-        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
-        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        value-serializer: com.recker.fraudDetection.Serdes.TransactionSerializer
